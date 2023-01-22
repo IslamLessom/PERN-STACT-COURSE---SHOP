@@ -1,0 +1,27 @@
+import React, { useContext } from 'react'
+import { Context } from '..'
+//mobx
+import { observer } from 'mobx-react-lite'
+import { Form } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+
+const BrandBar = observer(() => {
+    const { device } = useContext(Context)
+    return (
+        <Form className="d-flex">
+            {device.brands.map(brand =>
+                <Card
+                    style={{marginRight:"5px", cursor:'pointer'}}
+                    key={brand.id}
+                    className="p-2"
+                    onClick={() => device.setSelectedBrand(brand)}
+                    border={brand.id === device.selectedBrand.id ? 'danger' : 'green'}
+                >
+                    {brand.name}
+                </Card>   
+            )}
+        </Form>
+    )
+})
+
+export default BrandBar

@@ -6,8 +6,6 @@ import { Context } from '../index'
 
 function AppRouter() {
     const { user } = useContext(Context)
-
-    console.log(user)
     return (
         //НАВИГАЦИЯ 
         //ЛОГИКА - ЕСЛИ ЧЕЛОВЕК ЗАРЕГИСТРИРОВАЛ (isAuth = TRUE) ТО ПОЛЬЗОВАТЕЛЬ БУДЕТ ИМЕТЬ ДОСТУП КО ВСЕМ ССЫЛКАМ , НО ЕСЛИ НЕТ , 
